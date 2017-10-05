@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TimetablePrototype02/ViewControllers/AddTasksViewController.swift"
+            timestampString = "528805298.348063"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3"
+            endingLineNumber = "3"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimetablePrototype02.AddTasksViewController.__deallocating_deinit"
+                  moduleName = "TimetablePrototype02"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomashoughton/Documents/Programming/Repositories/TimetablePrototype02/TimetablePrototype02/ViewControllers/AddTasksViewController.swift"
+                  timestampString = "528741145.351729"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimetablePrototype02.AddTasksViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; TimetablePrototype02.AddTasksViewController"
+                  moduleName = "TimetablePrototype02"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomashoughton/Documents/Programming/Repositories/TimetablePrototype02/TimetablePrototype02/ViewControllers/AddTasksViewController.swift"
+                  timestampString = "528741145.35308"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimetablePrototype02.AddTasksViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; TimetablePrototype02.AddTasksViewController"
+                  moduleName = "TimetablePrototype02"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomashoughton/Documents/Programming/Repositories/TimetablePrototype02/TimetablePrototype02/ViewControllers/AddTasksViewController.swift"
+                  timestampString = "528741145.354377"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimetablePrototype02.AddTasksViewController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;TimetablePrototype02.AddTasksViewController&gt;"
+                  moduleName = "TimetablePrototype02"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomashoughton/Documents/Programming/Repositories/TimetablePrototype02/TimetablePrototype02/ViewControllers/AddTasksViewController.swift"
+                  timestampString = "528741145.355609"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimetablePrototype02.AddTasksViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;TimetablePrototype02.AddTasksViewController&gt;"
+                  moduleName = "TimetablePrototype02"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomashoughton/Documents/Programming/Repositories/TimetablePrototype02/TimetablePrototype02/ViewControllers/AddTasksViewController.swift"
+                  timestampString = "528741145.356833"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

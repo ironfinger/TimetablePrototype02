@@ -7,23 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03989EF69A98927FDCCDC279 /* Pods_TimetablePrototype02.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649714DB480E10C104A4218D /* Pods_TimetablePrototype02.framework */; };
+		E323DA9E1F824A4900069DD4 /* timetableSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E323DA9D1F824A4900069DD4 /* timetableSlot.swift */; };
+		E34633CF1F83EE3E00E2725B /* AddTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34633CE1F83EE3E00E2725B /* AddTasksViewController.swift */; };
+		E34633D11F84059500E2725B /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34633D01F84059500E2725B /* SubjectViewController.swift */; };
 		E35C6CAF1F799A0000A53590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C6CAE1F799A0000A53590 /* AppDelegate.swift */; };
-		E35C6CB11F799A0000A53590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C6CB01F799A0000A53590 /* ViewController.swift */; };
+		E35C6CB11F799A0000A53590 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C6CB01F799A0000A53590 /* SignInViewController.swift */; };
 		E35C6CB41F799A0000A53590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35C6CB21F799A0000A53590 /* Main.storyboard */; };
 		E35C6CB71F799A0000A53590 /* TimetablePrototype02.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E35C6CB51F799A0000A53590 /* TimetablePrototype02.xcdatamodeld */; };
 		E35C6CB91F799A0000A53590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35C6CB81F799A0000A53590 /* Assets.xcassets */; };
 		E35C6CBC1F799A0000A53590 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35C6CBA1F799A0000A53590 /* LaunchScreen.storyboard */; };
+		E3E098B91F7CF3BA00C0463C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3E098B81F7CF3B900C0463C /* GoogleService-Info.plist */; };
+		E3FECDB51F817303007C971E /* TimetableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FECDB41F817303007C971E /* TimetableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		254C053BFAF77DA4BFBDC8A6 /* Pods-TimetablePrototype02.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimetablePrototype02.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimetablePrototype02/Pods-TimetablePrototype02.debug.xcconfig"; sourceTree = "<group>"; };
+		649714DB480E10C104A4218D /* Pods_TimetablePrototype02.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimetablePrototype02.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98E7F00A2301216B4E3060F4 /* Pods-TimetablePrototype02.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimetablePrototype02.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimetablePrototype02/Pods-TimetablePrototype02.release.xcconfig"; sourceTree = "<group>"; };
+		E323DA9D1F824A4900069DD4 /* timetableSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timetableSlot.swift; sourceTree = "<group>"; };
+		E34633CE1F83EE3E00E2725B /* AddTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTasksViewController.swift; sourceTree = "<group>"; };
+		E34633D01F84059500E2725B /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		E35C6CAB1F799A0000A53590 /* TimetablePrototype02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimetablePrototype02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35C6CAE1F799A0000A53590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E35C6CB01F799A0000A53590 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E35C6CB01F799A0000A53590 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E35C6CB31F799A0000A53590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E35C6CB61F799A0000A53590 /* TimetablePrototype02.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimetablePrototype02.xcdatamodel; sourceTree = "<group>"; };
 		E35C6CB81F799A0000A53590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E35C6CBB1F799A0000A53590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E35C6CBD1F799A0000A53590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3E098B81F7CF3B900C0463C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E3FECDB41F817303007C971E /* TimetableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03989EF69A98927FDCCDC279 /* Pods_TimetablePrototype02.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5008693181947E50C0E6E22C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				254C053BFAF77DA4BFBDC8A6 /* Pods-TimetablePrototype02.debug.xcconfig */,
+				98E7F00A2301216B4E3060F4 /* Pods-TimetablePrototype02.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		629562EA1131B327EF19AB81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				649714DB480E10C104A4218D /* Pods_TimetablePrototype02.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E35C6CA21F799A0000A53590 = {
 			isa = PBXGroup;
 			children = (
 				E35C6CAD1F799A0000A53590 /* TimetablePrototype02 */,
 				E35C6CAC1F799A0000A53590 /* Products */,
+				5008693181947E50C0E6E22C /* Pods */,
+				629562EA1131B327EF19AB81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +90,36 @@
 		E35C6CAD1F799A0000A53590 /* TimetablePrototype02 */ = {
 			isa = PBXGroup;
 			children = (
+				E35EFECE1F7CED7A0010ED84 /* Classes */,
+				E35EFECD1F7CED730010ED84 /* ViewControllers */,
 				E35C6CAE1F799A0000A53590 /* AppDelegate.swift */,
-				E35C6CB01F799A0000A53590 /* ViewController.swift */,
 				E35C6CB21F799A0000A53590 /* Main.storyboard */,
 				E35C6CB81F799A0000A53590 /* Assets.xcassets */,
 				E35C6CBA1F799A0000A53590 /* LaunchScreen.storyboard */,
+				E3E098B81F7CF3B900C0463C /* GoogleService-Info.plist */,
 				E35C6CBD1F799A0000A53590 /* Info.plist */,
 				E35C6CB51F799A0000A53590 /* TimetablePrototype02.xcdatamodeld */,
 			);
 			path = TimetablePrototype02;
+			sourceTree = "<group>";
+		};
+		E35EFECD1F7CED730010ED84 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E35C6CB01F799A0000A53590 /* SignInViewController.swift */,
+				E3FECDB41F817303007C971E /* TimetableViewController.swift */,
+				E34633CE1F83EE3E00E2725B /* AddTasksViewController.swift */,
+				E34633D01F84059500E2725B /* SubjectViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E35EFECE1F7CED7A0010ED84 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E323DA9D1F824A4900069DD4 /* timetableSlot.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +129,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E35C6CC01F799A0000A53590 /* Build configuration list for PBXNativeTarget "TimetablePrototype02" */;
 			buildPhases = (
+				BE5DA3D801353D897EB87A7A /* [CP] Check Pods Manifest.lock */,
 				E35C6CA71F799A0000A53590 /* Sources */,
 				E35C6CA81F799A0000A53590 /* Frameworks */,
 				E35C6CA91F799A0000A53590 /* Resources */,
+				9ACD1E52834B5D4170E2E64C /* [CP] Embed Pods Frameworks */,
+				47D0A94FC0CE458B4058215E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35C6CBC1F799A0000A53590 /* LaunchScreen.storyboard in Resources */,
+				E3E098B91F7CF3BA00C0463C /* GoogleService-Info.plist in Resources */,
 				E35C6CB91F799A0000A53590 /* Assets.xcassets in Resources */,
 				E35C6CB41F799A0000A53590 /* Main.storyboard in Resources */,
 			);
@@ -134,13 +193,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		47D0A94FC0CE458B4058215E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimetablePrototype02/Pods-TimetablePrototype02-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ACD1E52834B5D4170E2E64C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimetablePrototype02/Pods-TimetablePrototype02-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE5DA3D801353D897EB87A7A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E35C6CA71F799A0000A53590 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E35C6CB11F799A0000A53590 /* ViewController.swift in Sources */,
+				E35C6CB11F799A0000A53590 /* SignInViewController.swift in Sources */,
+				E34633CF1F83EE3E00E2725B /* AddTasksViewController.swift in Sources */,
 				E35C6CAF1F799A0000A53590 /* AppDelegate.swift in Sources */,
+				E323DA9E1F824A4900069DD4 /* timetableSlot.swift in Sources */,
+				E34633D11F84059500E2725B /* SubjectViewController.swift in Sources */,
+				E3FECDB51F817303007C971E /* TimetableViewController.swift in Sources */,
 				E35C6CB71F799A0000A53590 /* TimetablePrototype02.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +387,7 @@
 		};
 		E35C6CC11F799A0000A53590 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 254C053BFAF77DA4BFBDC8A6 /* Pods-TimetablePrototype02.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +403,7 @@
 		};
 		E35C6CC21F799A0000A53590 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98E7F00A2301216B4E3060F4 /* Pods-TimetablePrototype02.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
