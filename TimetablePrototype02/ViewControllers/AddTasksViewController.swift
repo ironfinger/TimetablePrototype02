@@ -19,8 +19,8 @@ class AddTasksViewController: UIViewController {
     @IBOutlet weak var hoursTextField: UITextField! // This contains the hours.
     @IBOutlet weak var minutesTextField: UITextField! // This contains the minutes.
     @IBOutlet weak var subView: UIView!
-    
-    let selectedDay = "Monday"
+    @IBOutlet weak var weekDaysSegmentControl: UISegmentedControl!
+    @IBOutlet weak var weekSegmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +37,9 @@ class AddTasksViewController: UIViewController {
     
     @IBAction func addTaskBtnTapped(_ sender: Any) {
         let userUID = Auth.auth().currentUser!.uid // Retrieve the user unique identifier.
+        let selectedDay = pullSelectedDay(selectedDay: weekDaysSegmentControl.selectedSegmentIndex) // This pulls the selected day for the subject.
         let time = "\(hoursTextField.text!):\(minutesTextField.text!)" // Get the time to put into the string for the database.
-        let databaseContent: [String:String] = ["subject": subjectNameTextField.text!, "teacherName": teacherTextField.text!, "roomNum": roomNumberTextField.text!, "time":time] // Store all content into a dictionary.
+        let databaseContent: [String:String] = ["subject": subjectNameTextField.text!, "teacherName": teacherTextField.text!, "roomNum": roomNumberTextField.text!, "time":time, "day":selectedDay] // Store all content into a dictionary.
         
         Database.database().reference().child("Users").child(userUID).child("Timetable").child(selectedDay).childByAutoId().setValue(databaseContent) // This pushed the new task to the database.
         
@@ -46,8 +47,32 @@ class AddTasksViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    func pullSelectedDay(selectedDay:Int) -> String{
+        var returnValue = ""
+        if (selectedDay == 0) {
+            returnValue = "Monday"
+        }else if (selectedDay == 1) {
+            returnValue = "Tuesday"
+        }else if (selectedDay == 2) {
+            returnValue = "Wednesday"
+        }else if (selectedDay == 3) {
+            returnValue = "Thursday"
+        }else if (selectedDay == 4) {
+            returnValue = "Friday"
+        }else if (selectedDay == 5) {
+            returnValue = "Saturday"
+        }else if (selectedDay == 6) {
+            returnValue = "Sunday"
+        }
+        return returnValue
+    }
+    
+    func pullSelectedWeek() -> String{
+        return ""
+    }
+    
     @IBAction func tapGestureActivated(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {

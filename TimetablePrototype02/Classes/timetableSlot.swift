@@ -13,4 +13,6 @@ class TimetableSlot {
     var room = ""
     var teacher = ""
     var time = ""
+    var day = ""
+    var week = ""
 }
