@@ -15,4 +15,5 @@ class TimetableSlot {
     var time = ""
     var day = ""
     var week = ""
+    var period = 0
 }

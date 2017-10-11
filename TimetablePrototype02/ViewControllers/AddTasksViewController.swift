@@ -18,9 +18,10 @@ class AddTasksViewController: UIViewController {
     @IBOutlet weak var roomNumberTextField: UITextField! // This contains the room number.
     @IBOutlet weak var hoursTextField: UITextField! // This contains the hours.
     @IBOutlet weak var minutesTextField: UITextField! // This contains the minutes.
-    @IBOutlet weak var subView: UIView!
-    @IBOutlet weak var weekDaysSegmentControl: UISegmentedControl!
-    @IBOutlet weak var weekSegmentControl: UISegmentedControl!
+    @IBOutlet weak var subView: UIView! // This is the subview of the program.
+    @IBOutlet weak var weekDaysSegmentControl: UISegmentedControl! // This is how the user chooses between any of the week days.
+    @IBOutlet weak var weekSegmentControl: UISegmentedControl! // This is how the user chooses betweek week A or week B.
+    @IBOutlet weak var periodTextField: UITextField! // This is what sorts out the timetable slots.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +39,11 @@ class AddTasksViewController: UIViewController {
     @IBAction func addTaskBtnTapped(_ sender: Any) {
         let userUID = Auth.auth().currentUser!.uid // Retrieve the user unique identifier.
         let selectedDay = pullSelectedDay(selectedDay: weekDaysSegmentControl.selectedSegmentIndex) // This pulls the selected day for the subject.
+        let selectedWeek = "WeekA" // This is the current week that the user wants the timetable slot to be put into.
         let time = "\(hoursTextField.text!):\(minutesTextField.text!)" // Get the time to put into the string for the database.
         let databaseContent: [String:String] = ["subject": subjectNameTextField.text!, "teacherName": teacherTextField.text!, "roomNum": roomNumberTextField.text!, "time":time, "day":selectedDay] // Store all content into a dictionary.
         
-        Database.database().reference().child("Users").child(userUID).child("Timetable").child(selectedDay).childByAutoId().setValue(databaseContent) // This pushed the new task to the database.
+        Database.database().reference().child("Users").child(userUID).child("Timetable").child(selectedWeek).child(selectedDay).childByAutoId().setValue(databaseContent) // This pushed the new task to the database.
         
         // Dismiss the view controller once the button has been tapped.
         dismiss(animated: true, completion: nil)

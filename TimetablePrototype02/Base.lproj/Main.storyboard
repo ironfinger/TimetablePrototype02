@@ -60,7 +60,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-Bn-pT9">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Dragonoid10" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-Bn-pT9">
                                         <rect key="frame" x="8" y="201" width="327" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="mnS-ET-8aA"/>
@@ -69,7 +69,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qde-MI-JrA">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="tomhoughton888@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qde-MI-JrA">
                                         <rect key="frame" x="8" y="145" width="327" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="7EY-ne-QwH"/>
@@ -163,17 +163,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4qt-9P-80j">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="143" width="375" height="669"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.96862745100000003" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3dl-CL-4j1">
+                                <rect key="frame" x="16" y="102" width="343" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="3ty-rO-QfL"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Week A"/>
+                                    <segment title="Week B"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="weekSegmentControllerChanged:" destination="Ys5-s4-xEb" eventType="valueChanged" id="axD-xk-LsL"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96862745098039216" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4qt-9P-80j" firstAttribute="trailing" secondItem="Ae5-jd-dv3" secondAttribute="trailing" id="59v-bQ-iF0"/>
                             <constraint firstItem="4qt-9P-80j" firstAttribute="leading" secondItem="Ae5-jd-dv3" secondAttribute="leading" id="DSF-OA-RxZ"/>
-                            <constraint firstItem="4qt-9P-80j" firstAttribute="top" secondItem="Ae5-jd-dv3" secondAttribute="top" id="cu7-bl-d6M"/>
+                            <constraint firstItem="4qt-9P-80j" firstAttribute="top" secondItem="Ae5-jd-dv3" secondAttribute="top" constant="55" id="cu7-bl-d6M"/>
+                            <constraint firstItem="4qt-9P-80j" firstAttribute="top" secondItem="3dl-CL-4j1" secondAttribute="bottom" constant="14" id="dDQ-Os-lIp"/>
+                            <constraint firstItem="3dl-CL-4j1" firstAttribute="leading" secondItem="Ae5-jd-dv3" secondAttribute="leading" constant="16" id="eFK-Ux-Edo"/>
                             <constraint firstAttribute="bottom" secondItem="4qt-9P-80j" secondAttribute="bottom" id="iDg-YW-eo9"/>
+                            <constraint firstItem="Ae5-jd-dv3" firstAttribute="trailing" secondItem="3dl-CL-4j1" secondAttribute="trailing" constant="16" id="sJF-KM-yVB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ae5-jd-dv3"/>
                     </view>
@@ -188,12 +205,13 @@
                     <connections>
                         <outlet property="navBar" destination="TX3-Em-hA4" id="1Zn-ad-xUk"/>
                         <outlet property="tableView" destination="4qt-9P-80j" id="Sm3-ly-s9r"/>
+                        <outlet property="weeksSegmentControl" destination="3dl-CL-4j1" id="3HT-p4-rV7"/>
                         <segue destination="ACc-NF-CO5" kind="show" identifier="SubjectInfoSegue" id="FV9-ox-zyU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3N-oJ-tAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2422" y="133"/>
+            <point key="canvasLocation" x="2421.5999999999999" y="132.26600985221674"/>
         </scene>
         <!--Settings Root View Controller-->
         <scene sceneID="b4N-id-iO9">
@@ -462,7 +480,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zU0-S5-RSK">
-                                <rect key="frame" x="16" y="44" width="343" height="469"/>
+                                <rect key="frame" x="16" y="44" width="343" height="517"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqk-Mx-ynK">
                                         <rect key="frame" x="8" y="8" width="327" height="81"/>
@@ -542,8 +560,14 @@
                                         </segments>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Period" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2lH-2B-WPD">
+                                        <rect key="frame" x="8" y="392" width="327" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPk-RV-qPI">
-                                        <rect key="frame" x="8" y="381" width="327" height="81"/>
+                                        <rect key="frame" x="8" y="430" width="327" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="81" id="KZI-Nt-kwY"/>
                                         </constraints>
@@ -566,18 +590,20 @@
                                     <constraint firstItem="jWv-Qd-5f7" firstAttribute="leading" secondItem="qDY-6R-1DB" secondAttribute="leading" id="9t5-Dq-k3S"/>
                                     <constraint firstItem="jWv-Qd-5f7" firstAttribute="trailing" secondItem="sW8-jI-eej" secondAttribute="trailing" id="B5x-H5-N5R"/>
                                     <constraint firstItem="Mqk-Mx-ynK" firstAttribute="trailing" secondItem="MHh-ms-ceB" secondAttribute="trailing" id="Bw8-FK-Tb8"/>
-                                    <constraint firstAttribute="bottom" secondItem="NPk-RV-qPI" secondAttribute="bottom" constant="7" id="Dif-ze-v4a"/>
+                                    <constraint firstAttribute="bottom" secondItem="NPk-RV-qPI" secondAttribute="bottom" constant="6" id="Dif-ze-v4a"/>
                                     <constraint firstItem="Mqk-Mx-ynK" firstAttribute="leading" secondItem="MHh-ms-ceB" secondAttribute="leading" id="Dpi-pC-hh5"/>
                                     <constraint firstItem="2sE-x9-Rw5" firstAttribute="leading" secondItem="qDY-6R-1DB" secondAttribute="trailing" constant="4" id="KF1-k9-tVV"/>
                                     <constraint firstItem="Mqk-Mx-ynK" firstAttribute="leading" secondItem="zU0-S5-RSK" secondAttribute="leadingMargin" id="KKx-vz-vW5"/>
+                                    <constraint firstItem="2lH-2B-WPD" firstAttribute="trailing" secondItem="hvC-cq-UAB" secondAttribute="trailing" id="MD2-22-6q7"/>
                                     <constraint firstItem="Mqk-Mx-ynK" firstAttribute="top" secondItem="zU0-S5-RSK" secondAttribute="topMargin" id="Ms1-7c-LiN"/>
                                     <constraint firstItem="ETm-sZ-tzo" firstAttribute="centerX" secondItem="2sE-x9-Rw5" secondAttribute="centerX" id="N7c-PF-c8e"/>
                                     <constraint firstItem="MHh-ms-ceB" firstAttribute="top" secondItem="Mqk-Mx-ynK" secondAttribute="bottom" constant="8" symbolic="YES" id="SzQ-Ib-jkA"/>
                                     <constraint firstItem="ETm-sZ-tzo" firstAttribute="leading" secondItem="qDY-6R-1DB" secondAttribute="leading" id="UHj-k3-ZXo"/>
-                                    <constraint firstItem="NPk-RV-qPI" firstAttribute="top" secondItem="qDY-6R-1DB" secondAttribute="bottom" constant="101" id="Uk2-23-zcz"/>
+                                    <constraint firstItem="NPk-RV-qPI" firstAttribute="top" secondItem="qDY-6R-1DB" secondAttribute="bottom" constant="150" id="Uk2-23-zcz"/>
                                     <constraint firstItem="MHh-ms-ceB" firstAttribute="leading" secondItem="JHr-le-x0X" secondAttribute="leading" id="Vuh-18-JkE"/>
-                                    <constraint firstItem="NPk-RV-qPI" firstAttribute="top" secondItem="hvC-cq-UAB" secondAttribute="bottom" constant="6" id="WuF-KY-BaM"/>
+                                    <constraint firstItem="NPk-RV-qPI" firstAttribute="top" secondItem="hvC-cq-UAB" secondAttribute="bottom" constant="55" id="WuF-KY-BaM"/>
                                     <constraint firstItem="hvC-cq-UAB" firstAttribute="top" secondItem="jWv-Qd-5f7" secondAttribute="bottom" constant="20" id="XVP-6g-wVZ"/>
+                                    <constraint firstItem="NPk-RV-qPI" firstAttribute="top" secondItem="2lH-2B-WPD" secondAttribute="bottom" constant="8" symbolic="YES" id="beR-hh-8Uh"/>
                                     <constraint firstItem="ETm-sZ-tzo" firstAttribute="trailing" secondItem="sW8-jI-eej" secondAttribute="trailing" id="c8B-6w-R4e"/>
                                     <constraint firstItem="qDY-6R-1DB" firstAttribute="leading" secondItem="NPk-RV-qPI" secondAttribute="leading" id="eoT-ju-A1C"/>
                                     <constraint firstItem="ETm-sZ-tzo" firstAttribute="top" secondItem="JHr-le-x0X" secondAttribute="bottom" constant="20" id="fAO-So-8wI"/>
@@ -586,7 +612,8 @@
                                     <constraint firstItem="qDY-6R-1DB" firstAttribute="top" secondItem="ETm-sZ-tzo" secondAttribute="bottom" constant="22" id="kwf-So-kH8"/>
                                     <constraint firstItem="sW8-jI-eej" firstAttribute="leading" secondItem="2sE-x9-Rw5" secondAttribute="trailing" constant="4" id="ljz-wq-Ylm"/>
                                     <constraint firstItem="qDY-6R-1DB" firstAttribute="baseline" secondItem="sW8-jI-eej" secondAttribute="baseline" id="p8n-Ch-ika"/>
-                                    <constraint firstItem="NPk-RV-qPI" firstAttribute="top" secondItem="2sE-x9-Rw5" secondAttribute="bottom" constant="108" id="w0g-se-6SK"/>
+                                    <constraint firstItem="2lH-2B-WPD" firstAttribute="leading" secondItem="hvC-cq-UAB" secondAttribute="leading" id="sCe-1C-VaJ"/>
+                                    <constraint firstItem="NPk-RV-qPI" firstAttribute="top" secondItem="2sE-x9-Rw5" secondAttribute="bottom" constant="157" id="w0g-se-6SK"/>
                                     <constraint firstItem="Mqk-Mx-ynK" firstAttribute="trailing" secondItem="zU0-S5-RSK" secondAttribute="trailingMargin" id="yFv-1W-O6n"/>
                                     <constraint firstItem="JHr-le-x0X" firstAttribute="top" secondItem="MHh-ms-ceB" secondAttribute="bottom" constant="21" id="zFc-dg-L6E"/>
                                 </constraints>
@@ -607,6 +634,7 @@
                     <connections>
                         <outlet property="hoursTextField" destination="qDY-6R-1DB" id="yYF-5l-dI5"/>
                         <outlet property="minutesTextField" destination="sW8-jI-eej" id="rfn-pg-cRW"/>
+                        <outlet property="periodTextField" destination="2lH-2B-WPD" id="IlL-tm-x0g"/>
                         <outlet property="roomNumberTextField" destination="ETm-sZ-tzo" id="9hh-zO-0aG"/>
                         <outlet property="subView" destination="zU0-S5-RSK" id="dlT-NZ-jqw"/>
                         <outlet property="subjectNameTextField" destination="MHh-ms-ceB" id="G1t-N5-69J"/>
