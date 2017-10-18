@@ -23,6 +23,7 @@ class TimetableViewController: UIViewController, UITableViewDataSource, UITableV
     //var selectedWeek = "WeekA" //  Placeholder for the selected week.
     var selectedSubjet = TimetableSlot()
     var currentDate = Date()
+    let userUID = Auth.auth().currentUser!.uid
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +40,8 @@ class TimetableViewController: UIViewController, UITableViewDataSource, UITableV
     // Pulling data.
     
     func populateTimetable() {
-        let user = Auth.auth().currentUser!.uid
         let currentDay = getCurrentDay()
-        Database.database().reference().child("Users").child(user).child("Timetable").child("WeekA").child(currentDay).observe(DataEventType.childAdded) { (snapshot) in
+        Database.database().reference().child("Users").child(userUID).child("Timetable").child("WeekA").child(currentDay).observe(DataEventType.childAdded) { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let subject = value?["subject"] as? String ?? ""
             let teacherName = value?["teacherName"] as? String ?? ""
@@ -77,7 +77,7 @@ class TimetableViewController: UIViewController, UITableViewDataSource, UITableV
             currentDay = "Friday"
         }else if (weekday == 7) {
             currentDay = "Saturday"
-        }else if (weekday == 8) {
+        }else if (weekday == 1) {
             currentDay = "Sunday"
         }
         return currentDay
@@ -101,6 +101,15 @@ class TimetableViewController: UIViewController, UITableViewDataSource, UITableV
        performSegue(withIdentifier: "SubjectInfoSegue", sender: indexPath.row)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        timetableSlots.remove(at: indexPath.row)
+        tableView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "SubjectInfoSegue") {
             let nextVC = segue.destination as! SubjectViewController
@@ -109,9 +118,7 @@ class TimetableViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     // Segment Controller.
-    
     @IBAction func weekSegmentControllerChanged(_ sender: Any) {
-        
     }
     
     override func didReceiveMemoryWarning() {

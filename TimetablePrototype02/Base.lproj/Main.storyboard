@@ -471,6 +471,65 @@
             </objects>
             <point key="canvasLocation" x="2422" y="855"/>
         </scene>
+        <!--Entire Timetable View Controller-->
+        <scene sceneID="hDN-YY-bzH">
+            <objects>
+                <viewController id="8aW-uQ-uIn" customClass="EntireTimetableViewController" customModule="TimetablePrototype02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dla-NS-ujw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vde-2w-Aia">
+                                <rect key="frame" x="24" y="688" width="327" height="29"/>
+                                <segments>
+                                    <segment title="Mon"/>
+                                    <segment title="Tues"/>
+                                    <segment title="Wed"/>
+                                    <segment title="Thurs"/>
+                                    <segment title="Fri"/>
+                                    <segment title="Sat"/>
+                                    <segment title="Sun"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentController:" destination="8aW-uQ-uIn" eventType="valueChanged" id="2xm-09-aBr"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Gj-xq-Wgv">
+                                <rect key="frame" x="9" y="97" width="357" height="583"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vde-2w-Aia" firstAttribute="top" secondItem="5Gj-xq-Wgv" secondAttribute="bottom" constant="8" id="6Ic-Tl-st7"/>
+                            <constraint firstItem="Vde-2w-Aia" firstAttribute="leading" secondItem="sO6-Cp-vMP" secondAttribute="leading" constant="24" id="7bM-o4-vwv"/>
+                            <constraint firstItem="sO6-Cp-vMP" firstAttribute="trailing" secondItem="Vde-2w-Aia" secondAttribute="trailing" constant="24" id="b0H-EM-ylw"/>
+                            <constraint firstItem="Vde-2w-Aia" firstAttribute="top" secondItem="5Gj-xq-Wgv" secondAttribute="bottom" constant="8" id="p3Y-Ve-7nd"/>
+                            <constraint firstItem="sO6-Cp-vMP" firstAttribute="bottom" secondItem="Vde-2w-Aia" secondAttribute="bottom" constant="13" id="pI3-94-bRV"/>
+                            <constraint firstItem="5Gj-xq-Wgv" firstAttribute="top" secondItem="sO6-Cp-vMP" secondAttribute="top" constant="9" id="prt-Nq-DGD"/>
+                            <constraint firstItem="5Gj-xq-Wgv" firstAttribute="leading" secondItem="sO6-Cp-vMP" secondAttribute="leading" constant="9" id="zMm-H0-MIe"/>
+                            <constraint firstItem="sO6-Cp-vMP" firstAttribute="trailing" secondItem="5Gj-xq-Wgv" secondAttribute="trailing" constant="9" id="zb9-5H-48q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sO6-Cp-vMP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kcC-sm-bar">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cIP-GP-AuD">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="LSu-KA-7za" kind="presentation" id="u2p-rn-CZG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentController" destination="Vde-2w-Aia" id="Kla-7e-pDg"/>
+                        <outlet property="tableview" destination="5Gj-xq-Wgv" id="MtO-5h-4oc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B4v-Cc-bUh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1684" y="-585.22167487684726"/>
+        </scene>
         <!--Add Tasks View Controller-->
         <scene sceneID="Q1q-jL-43E">
             <objects>
@@ -662,10 +721,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="1" green="0.96862745100000003" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.93000000000000005" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="I0U-dj-Tqg" kind="relationship" relationship="viewControllers" id="8bX-3u-okD"/>
                         <segue destination="uvd-4z-cKA" kind="relationship" relationship="viewControllers" id="qEh-1g-HYZ"/>
+                        <segue destination="vD7-8s-9Gz" kind="relationship" relationship="viewControllers" id="9So-mT-B6Z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xqe-Sl-5PN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -712,5 +773,30 @@
             </objects>
             <point key="canvasLocation" x="935" y="855"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="4dP-hd-zHA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vD7-8s-9Gz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="DeL-nq-2c6">
+                        <color key="badgeColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dwd-lP-qIj">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.96862745100000003" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8aW-uQ-uIn" kind="relationship" relationship="rootViewController" id="5up-fh-Vg1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yRA-AO-duK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="-585"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="u2p-rn-CZG"/>
+    </inferredMetricsTieBreakers>
 </document>
