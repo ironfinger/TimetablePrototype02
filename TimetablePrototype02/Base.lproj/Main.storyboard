@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1OV-2a-zDv">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,8 +14,74 @@
         <array key="AmericanTypewriter.ttc">
             <string>AmericanTypewriter</string>
         </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
     </customFonts>
     <scenes>
+        <!--Login Select View Controller-->
+        <scene sceneID="xeh-sK-GJp">
+            <objects>
+                <viewController id="1OV-2a-zDv" customClass="LoginSelectViewController" customModule="TimetablePrototype02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3ux-YH-FJc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="eaw-k1-6yd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSi-Xa-rOa">
+                                <rect key="frame" x="56" y="622" width="262" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.074509803921568626" green="0.91764705882352937" blue="0.63529411764705879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7z-VN-85z">
+                                <rect key="frame" x="56" y="536" width="262" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ue-mB-Qc8">
+                                <rect key="frame" x="0.0" y="31" width="277" height="345"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="400"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awy-Q8-icP">
+                                <rect key="frame" x="41" y="103" width="277" height="345"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eaw-k1-6yd" firstAttribute="leading" secondItem="8yG-nQ-AeS" secondAttribute="leading" id="HQu-hq-rvC"/>
+                            <constraint firstItem="eaw-k1-6yd" firstAttribute="top" secondItem="8yG-nQ-AeS" secondAttribute="top" constant="-44" id="PvW-0i-50F"/>
+                            <constraint firstItem="8yG-nQ-AeS" firstAttribute="trailing" secondItem="eaw-k1-6yd" secondAttribute="trailing" id="QAo-Hd-z5d"/>
+                            <constraint firstItem="8yG-nQ-AeS" firstAttribute="bottom" secondItem="eaw-k1-6yd" secondAttribute="bottom" constant="-34" id="YxN-GD-SU8"/>
+                            <constraint firstAttribute="bottom" secondItem="eaw-k1-6yd" secondAttribute="bottom" id="mm2-bJ-kmL"/>
+                            <constraint firstItem="eaw-k1-6yd" firstAttribute="top" secondItem="3ux-YH-FJc" secondAttribute="top" id="oNB-LN-bch"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8yG-nQ-AeS"/>
+                    </view>
+                    <connections>
+                        <outlet property="SignUpSelectBtn" destination="iSi-Xa-rOa" id="VXE-Vs-bHz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ap1-BQ-iaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-751.20000000000005" y="132.26600985221674"/>
+        </scene>
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -522,6 +588,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="navBar" destination="kcC-sm-bar" id="FXB-aD-bD8"/>
+                        <outlet property="navigationItem" destination="kcC-sm-bar" id="dAv-i8-g9p"/>
                         <outlet property="segmentController" destination="Vde-2w-Aia" id="Kla-7e-pDg"/>
                         <outlet property="tableview" destination="5Gj-xq-Wgv" id="MtO-5h-4oc"/>
                     </connections>
@@ -625,18 +693,30 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPk-RV-qPI">
-                                        <rect key="frame" x="8" y="430" width="327" height="81"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPk-RV-qPI">
+                                        <rect key="frame" x="8" y="430" width="138" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="81" id="KZI-Nt-kwY"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="43"/>
-                                        <state key="normal" title="A D D  ">
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
+                                        <state key="normal" title="A D D">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="addTaskBtnTapped:" destination="LSu-KA-7za" eventType="touchUpInside" id="evI-PT-vB9"/>
                                             <action selector="loginSignUpTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rZl-Ac-Zgt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIo-L1-vv0">
+                                        <rect key="frame" x="147" y="430" width="188" height="81"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
+                                        <state key="normal" title="C A N C E L">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addTaskBtnTapped:" destination="LSu-KA-7za" eventType="touchUpInside" id="r9G-Px-6mG"/>
+                                            <action selector="cancelButtonTapped:" destination="LSu-KA-7za" eventType="touchUpInside" id="R8F-zs-ksH"/>
+                                            <action selector="loginSignUpTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nhc-PR-Q36"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -664,13 +744,16 @@
                                     <constraint firstItem="hvC-cq-UAB" firstAttribute="top" secondItem="jWv-Qd-5f7" secondAttribute="bottom" constant="20" id="XVP-6g-wVZ"/>
                                     <constraint firstItem="NPk-RV-qPI" firstAttribute="top" secondItem="2lH-2B-WPD" secondAttribute="bottom" constant="8" symbolic="YES" id="beR-hh-8Uh"/>
                                     <constraint firstItem="ETm-sZ-tzo" firstAttribute="trailing" secondItem="sW8-jI-eej" secondAttribute="trailing" id="c8B-6w-R4e"/>
+                                    <constraint firstItem="vIo-L1-vv0" firstAttribute="firstBaseline" secondItem="NPk-RV-qPI" secondAttribute="baseline" id="eK1-Op-naP"/>
                                     <constraint firstItem="qDY-6R-1DB" firstAttribute="leading" secondItem="NPk-RV-qPI" secondAttribute="leading" id="eoT-ju-A1C"/>
+                                    <constraint firstItem="vIo-L1-vv0" firstAttribute="top" secondItem="NPk-RV-qPI" secondAttribute="top" id="eqf-9F-Tr2"/>
                                     <constraint firstItem="ETm-sZ-tzo" firstAttribute="top" secondItem="JHr-le-x0X" secondAttribute="bottom" constant="20" id="fAO-So-8wI"/>
                                     <constraint firstItem="sW8-jI-eej" firstAttribute="trailing" secondItem="NPk-RV-qPI" secondAttribute="trailing" id="hPJ-3d-KbC"/>
                                     <constraint firstItem="hvC-cq-UAB" firstAttribute="leading" secondItem="jWv-Qd-5f7" secondAttribute="leading" id="hp8-e4-fh6"/>
                                     <constraint firstItem="qDY-6R-1DB" firstAttribute="top" secondItem="ETm-sZ-tzo" secondAttribute="bottom" constant="22" id="kwf-So-kH8"/>
                                     <constraint firstItem="sW8-jI-eej" firstAttribute="leading" secondItem="2sE-x9-Rw5" secondAttribute="trailing" constant="4" id="ljz-wq-Ylm"/>
                                     <constraint firstItem="qDY-6R-1DB" firstAttribute="baseline" secondItem="sW8-jI-eej" secondAttribute="baseline" id="p8n-Ch-ika"/>
+                                    <constraint firstItem="vIo-L1-vv0" firstAttribute="trailing" secondItem="2lH-2B-WPD" secondAttribute="trailing" id="r5L-WQ-gT5"/>
                                     <constraint firstItem="2lH-2B-WPD" firstAttribute="leading" secondItem="hvC-cq-UAB" secondAttribute="leading" id="sCe-1C-VaJ"/>
                                     <constraint firstItem="NPk-RV-qPI" firstAttribute="top" secondItem="2sE-x9-Rw5" secondAttribute="bottom" constant="157" id="w0g-se-6SK"/>
                                     <constraint firstItem="Mqk-Mx-ynK" firstAttribute="trailing" secondItem="zU0-S5-RSK" secondAttribute="trailingMargin" id="yFv-1W-O6n"/>
@@ -737,7 +820,7 @@
         <scene sceneID="hQS-b2-T7p">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I0U-dj-Tqg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Timetable" id="Pn6-gE-Ao9"/>
+                    <tabBarItem key="tabBarItem" title="Timetable" selectedImage="home-7" id="Pn6-gE-Ao9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8wh-J8-Coj">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -757,7 +840,7 @@
         <scene sceneID="Nae-D5-mGz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uvd-4z-cKA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="qfh-oe-N6l"/>
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="gear-7" id="qfh-oe-N6l"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ysx-21-ERd">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -773,11 +856,11 @@
             </objects>
             <point key="canvasLocation" x="935" y="855"/>
         </scene>
-        <!--Item-->
+        <!--Full Timetable-->
         <scene sceneID="4dP-hd-zHA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vD7-8s-9Gz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="DeL-nq-2c6">
+                    <tabBarItem key="tabBarItem" title="Full Timetable" selectedImage="list-simple-7" id="DeL-nq-2c6">
                         <color key="badgeColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -796,6 +879,12 @@
             <point key="canvasLocation" x="935" y="-585"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Wallpaper" width="213" height="378"/>
+        <image name="gear-7" width="10" height="10"/>
+        <image name="home-7" width="10" height="10"/>
+        <image name="list-simple-7" width="10" height="10"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="u2p-rn-CZG"/>
     </inferredMetricsTieBreakers>

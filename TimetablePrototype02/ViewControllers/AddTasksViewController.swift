@@ -23,6 +23,8 @@ class AddTasksViewController: UIViewController {
     @IBOutlet weak var weekSegmentControl: UISegmentedControl! // This is how the user chooses betweek week A or week B.
     @IBOutlet weak var periodTextField: UITextField! // This is what sorts out the timetable slots.
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -75,6 +77,10 @@ class AddTasksViewController: UIViewController {
     
     @IBAction func tapGestureActivated(_ sender: Any) {
         view.endEditing(true)
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03989EF69A98927FDCCDC279 /* Pods_TimetablePrototype02.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649714DB480E10C104A4218D /* Pods_TimetablePrototype02.framework */; };
+		E3135C061FA9F561008BBE95 /* LoginSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3135C051FA9F561008BBE95 /* LoginSelectViewController.swift */; };
 		E323DA9E1F824A4900069DD4 /* timetableSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E323DA9D1F824A4900069DD4 /* timetableSlot.swift */; };
 		E34633CF1F83EE3E00E2725B /* AddTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34633CE1F83EE3E00E2725B /* AddTasksViewController.swift */; };
 		E34633D11F84059500E2725B /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34633D01F84059500E2725B /* SubjectViewController.swift */; };
@@ -28,6 +29,7 @@
 		254C053BFAF77DA4BFBDC8A6 /* Pods-TimetablePrototype02.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimetablePrototype02.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimetablePrototype02/Pods-TimetablePrototype02.debug.xcconfig"; sourceTree = "<group>"; };
 		649714DB480E10C104A4218D /* Pods_TimetablePrototype02.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimetablePrototype02.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E7F00A2301216B4E3060F4 /* Pods-TimetablePrototype02.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimetablePrototype02.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimetablePrototype02/Pods-TimetablePrototype02.release.xcconfig"; sourceTree = "<group>"; };
+		E3135C051FA9F561008BBE95 /* LoginSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSelectViewController.swift; sourceTree = "<group>"; };
 		E323DA9D1F824A4900069DD4 /* timetableSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timetableSlot.swift; sourceTree = "<group>"; };
 		E34633CE1F83EE3E00E2725B /* AddTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTasksViewController.swift; sourceTree = "<group>"; };
 		E34633D01F84059500E2725B /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				E37C76861F89034000FCA85E /* SettingsRootViewController.swift */,
 				E37C76881F89036A00FCA85E /* SelectedSettingViewController.swift */,
 				E3C3B2AD1F8F6AF3000F2DBE /* EntireTimetableViewController.swift */,
+				E3135C051FA9F561008BBE95 /* LoginSelectViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				E35C6CB11F799A0000A53590 /* SignInViewController.swift in Sources */,
 				E34633CF1F83EE3E00E2725B /* AddTasksViewController.swift in Sources */,
+				E3135C061FA9F561008BBE95 /* LoginSelectViewController.swift in Sources */,
 				E35C6CAF1F799A0000A53590 /* AppDelegate.swift in Sources */,
 				E323DA9E1F824A4900069DD4 /* timetableSlot.swift in Sources */,
 				E34633D11F84059500E2725B /* SubjectViewController.swift in Sources */,

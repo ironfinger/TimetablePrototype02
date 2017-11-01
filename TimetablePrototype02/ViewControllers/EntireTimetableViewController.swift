@@ -16,6 +16,7 @@ class EntireTimetableViewController: UIViewController, UITableViewDataSource, UI
 
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var segmentController: UISegmentedControl!
+    @IBOutlet weak var navBar: UINavigationItem!
     
     var timetableSlots = [TimetableSlot]()
     
@@ -26,6 +27,8 @@ class EntireTimetableViewController: UIViewController, UITableViewDataSource, UI
         tableview.delegate = self
         
         tableview.layer.cornerRadius = 16
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default) // Removes the shadow line underneath the navigation view.
+        self.navigationController?.navigationBar.shadowImage = UIImage() // This sets the shadow image.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,6 +44,24 @@ class EntireTimetableViewController: UIViewController, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        // MARK: - Cell.
+        /*
+        cell.mainBackground.layer.cornerRadius = 8
+        cell.mainBackground.layer.masksToBounds = true
+        
+        cell.shadowLayer.layer.masksToBounds = false
+        cell.shadowLayer.layer.shadowOffset = CGSizeMake(0, 0)
+        cell.shadowLayer.layer.shadowColor = UIColor.blackColor().CGColor
+        cell.shadowLayer.layer.shadowOpacity = 0.23
+        cell.shadowLayer.layer.shadowRadius = 4
+        */
+        
+        /*
+        cell.layer.cornerRadius = 8
+        cell.layer.masksToBounds = true
+        tableView.backgroundColor = UIColor.clear
+        tableView.separatorStyle = .none
+        */
         let currentSubject = timetableSlots[indexPath.row]
         cell.textLabel?.text = currentSubject.name
         return cell
