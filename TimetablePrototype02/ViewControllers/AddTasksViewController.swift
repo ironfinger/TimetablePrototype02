@@ -23,8 +23,6 @@ class AddTasksViewController: UIViewController {
     @IBOutlet weak var weekSegmentControl: UISegmentedControl! // This is how the user chooses betweek week A or week B.
     @IBOutlet weak var periodTextField: UITextField! // This is what sorts out the timetable slots.
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -36,12 +34,26 @@ class AddTasksViewController: UIViewController {
         self.subView.layer.cornerRadius = 16
         self.subView.layer.borderWidth = 2.5
         self.subView.layer.borderColor = UIColor.black.cgColor
+        /*
+        if !UIAccessibilityIsReduceTransparencyEnabled() {
+            self.view.backgroundColor = UIColor.clear
+            
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            //always fill the view
+            blurEffectView.frame = self.view.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
+            self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+        } else {
+            self.view.backgroundColor = UIColor.black
+        }*/
     }
     
     @IBAction func addTaskBtnTapped(_ sender: Any) {
         let userUID = Auth.auth().currentUser!.uid // Retrieve the user unique identifier.
         let selectedDay = pullSelectedDay(selectedDay: weekDaysSegmentControl.selectedSegmentIndex) // This pulls the selected day for the subject.
-        let selectedWeek = "WeekA" // This is the current week that the user wants the timetable slot to be put into.
+        let selectedWeek = pullSelectedWeek() // This is the current week that the user wants the timetable slot to be put into.
         let time = "\(hoursTextField.text!):\(minutesTextField.text!)" // Get the time to put into the string for the database.
         let databaseContent: [String:String] = ["subject": subjectNameTextField.text!, "teacherName": teacherTextField.text!, "roomNum": roomNumberTextField.text!, "time":time, "day":selectedDay] // Store all content into a dictionary.
         
@@ -71,8 +83,14 @@ class AddTasksViewController: UIViewController {
         return returnValue
     }
     
-    func pullSelectedWeek() -> String{
-        return ""
+    func pullSelectedWeek() -> String{ // This retrieves the selected week value from the week segment control.
+        var returnValue = ""
+        if (weekSegmentControl.selectedSegmentIndex == 0) {
+            returnValue = "WeekA"
+        }else if (weekSegmentControl.selectedSegmentIndex == 1) {
+            returnValue = "WeekB"
+        }
+        return returnValue
     }
     
     @IBAction func tapGestureActivated(_ sender: Any) {

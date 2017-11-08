@@ -11,15 +11,32 @@ import UIKit
 class LoginSelectViewController: UIViewController {
 
     @IBOutlet weak var SignUpSelectBtn: UIButton!
+    @IBOutlet weak var loginSelectBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        viewSetup()
     }
 
     func viewSetup() {
         SignUpSelectBtn.layer.cornerRadius = 10
-        
+        loginSelectBtn.layer.cornerRadius = 10
+    }
+    
+    @IBAction func loginSelected(_ sender: Any) {
+        performSegue(withIdentifier: "loginSignUpSegue", sender: "login")
+    }
+    
+    @IBAction func signUpSelect(_ sender: Any) {
+        performSegue(withIdentifier: "loginSignUpSegue", sender: "signUp")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "loginSignUpSegue") {
+            let nextVC = segue.destination as! SignInLoginViewController
+            nextVC.optionIdentifier = sender as! String
+        }
     }
     
     override func didReceiveMemoryWarning() {

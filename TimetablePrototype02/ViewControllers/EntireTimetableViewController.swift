@@ -11,12 +11,14 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseCore
+import CoreData
 
 class EntireTimetableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var segmentController: UISegmentedControl!
     @IBOutlet weak var navBar: UINavigationItem!
+    @IBOutlet weak var weekSegmentControl: UISegmentedControl!
     
     var timetableSlots = [TimetableSlot]()
     
@@ -25,8 +27,8 @@ class EntireTimetableViewController: UIViewController, UITableViewDataSource, UI
         // Do any additional setup after loading the view.
         tableview.dataSource = self
         tableview.delegate = self
-        
         tableview.layer.cornerRadius = 16
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default) // Removes the shadow line underneath the navigation view.
         self.navigationController?.navigationBar.shadowImage = UIImage() // This sets the shadow image.
     }
@@ -34,7 +36,7 @@ class EntireTimetableViewController: UIViewController, UITableViewDataSource, UI
     override func viewDidAppear(_ animated: Bool) {
         let dateString = sendDate(i: segmentController.selectedSegmentIndex)
         timetableSlots.removeAll()
-        pullData(selectedDay: dateString)
+        pullData(selectedDay: dateString, selectedWeek: sendWeek())
     }
 
     // MARK: - Table View.
@@ -68,9 +70,10 @@ class EntireTimetableViewController: UIViewController, UITableViewDataSource, UI
     }
     
     // MARK: - Pull Values From Database.
-    func pullData(selectedDay: String) {
+    func pullData(selectedDay: String, selectedWeek: String) {
         let currentUserUUID = Auth.auth().currentUser!.uid
-        Database.database().reference().child("Users").child(currentUserUUID).child("Timetable").child("WeekA").child(selectedDay).observe(DataEventType.childAdded) { (snapshot) in
+        let selectedWeek = sendWeek()
+        Database.database().reference().child("Users").child(currentUserUUID).child("Timetable").child(selectedWeek).child(selectedDay).observe(DataEventType.childAdded) { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let subject = value?["subject"] as? String ?? ""
             let teacherName = value?["teacherName"] as? String ?? ""
@@ -118,14 +121,32 @@ class EntireTimetableViewController: UIViewController, UITableViewDataSource, UI
         return rtn
     }
     
+    // MARK: - Figure out selected week.
+    func sendWeek() -> String {
+        var returnValue = ""
+        if (weekSegmentControl.selectedSegmentIndex == 0) {
+            returnValue = "WeekA"
+        }else if (weekSegmentControl.selectedSegmentIndex == 1) {
+            returnValue = "WeekB"
+        }
+        return returnValue
+    }
+    
     // MARK: - Segment Controller.
     @IBAction func segmentController(_ sender: Any) {
         let selectedDay = sendDate(i: segmentController.selectedSegmentIndex)
-        print("Old Count: \(timetableSlots.count)")
         timetableSlots.removeAll()
-        print("Everything should have been removed: \(timetableSlots.count)")
-        pullData(selectedDay: selectedDay)
+        pullData(selectedDay: selectedDay, selectedWeek: sendWeek())
         tableview.reloadData()
+    }
+    
+    // MARK: - Week Segment Controller.
+    @IBAction func weekSegmentContollerTapped(_ sender: Any) {
+        timetableSlots.removeAll()
+        tableview.reloadData()
+        let selectedDay = sendDate(i: segmentController.selectedSegmentIndex)
+        pullData(selectedDay: selectedDay, selectedWeek: sendWeek())
+        print("Count before hand \(timetableSlots.count)")
     }
     
     override func didReceiveMemoryWarning() {

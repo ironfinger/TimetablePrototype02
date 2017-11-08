@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class SettingsRootViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let settings = ["Reset Timetable"]
+    let settings = ["Reset Timetable", "Set Persistance", "Theme: Light"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +37,36 @@ class SettingsRootViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.row == 0) {
             performSegue(withIdentifier: "SelectedSettingSegue", sender: "Clear")
+        }else if (settings[indexPath.row] == "Set Persistance") {
+            //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+        }else if (settings[indexPath.row] == "Theme: Light") {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let newColor = Settings(context: context)
+            newColor.colorTheme = "Dark"
+            settings[indexPath.row] == "Theme: Dark"
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        }else if (settings[indexPath.row] == "Theme: Dark") {
         }
+    }
+    /*
+     if comicBook != nil {
+         comicBook!.title = titleTextField.text!
+         comicBook!.image = UIImagePNGRepresentation(comicBookImage.image!)
+         navigationController?.popViewController(animated: true)
+         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+     }else{
+     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+     let comicBook = ComicBook(context: context)
+     comicBook.title = titleTextField.text!
+     comicBook.image = UIImagePNGRepresentation(comicBookImage.image!)
+     comicBook.comicComplete = false
+     navigationController?.popViewController(animated: true)
+     (UIApplication.shared.delegate as! AppDelegate).saveContext()
+     }
+     */
+    // MARK: - CoreData Sync
+    func dataSync() {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

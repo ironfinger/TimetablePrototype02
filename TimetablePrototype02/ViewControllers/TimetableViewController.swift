@@ -30,7 +30,14 @@ class TimetableViewController: UIViewController, UITableViewDataSource, UITableV
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        setupView()
         populateTimetable()
+    }
+    
+    func setupView() {
+        tableView.layer.cornerRadius = 10
+        tableView.backgroundView = nil
+        tableView.backgroundColor = UIColor.init(red: 232, green: 255, blue: 249, alpha: 1)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,13 +45,20 @@ class TimetableViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     // Pulling data.
-    
     func populateTimetable() {
         let currentDay = getCurrentDay()
-        Database.database().reference().child("Users").child(userUID).child("Timetable").child("WeekA").child(currentDay).observe(DataEventType.childAdded) { (snapshot) in
+        var currentWeek = "WeekA"
+        
+        if (weeksSegmentControl.selectedSegmentIndex == 1) {
+            currentWeek = "WeekB"
+        }else if (weeksSegmentControl.selectedSegmentIndex == 0) {
+            currentWeek = "WeekA"
+        }
+        
+        Database.database().reference().child("Users").child(userUID).child("Timetable").child(currentWeek).child(currentDay).observe(DataEventType.childAdded, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let subject = value?["subject"] as? String ?? ""
-            let teacherName = value?["teacherName"] as? String ?? ""
+            let teacherName = value?["time"] as? String ?? ""
             let roomNum = value?["roomNum"] as? String ?? ""
             let subjectTime = value?["time"] as? String ?? ""
             let subjectDay = value?["day"] as? String ?? ""
@@ -58,6 +72,11 @@ class TimetableViewController: UIViewController, UITableViewDataSource, UITableV
             
             self.timetableSlots.append(newSubject)
             self.tableView.reloadData()
+            
+        }) { (error) in
+            if (error != nil) {
+                print("We couldn't read the values \(error)")
+            }
         }
     }
     
@@ -77,7 +96,7 @@ class TimetableViewController: UIViewController, UITableViewDataSource, UITableV
             currentDay = "Friday"
         }else if (weekday == 7) {
             currentDay = "Saturday"
-        }else if (weekday == 1) {
+        }else if (weekday == 1) {2
             currentDay = "Sunday"
         }
         return currentDay
@@ -91,6 +110,8 @@ class TimetableViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.backgroundView = nil
+        cell.backgroundColor = UIColor.init(red: 232, green: 255, blue: 249, alpha: 1)
         let retreivedSlot = timetableSlots[indexPath.row]
         let name = retreivedSlot.name
         cell.textLabel?.text = name
@@ -119,6 +140,8 @@ class TimetableViewController: UIViewController, UITableViewDataSource, UITableV
     
     // Segment Controller.
     @IBAction func weekSegmentControllerChanged(_ sender: Any) {
+        timetableSlots.removeAll() // Remove all of the points in the timetable slots data array.
+        populateTimetable() // Reload all of the value from the timetable.
     }
     
     override func didReceiveMemoryWarning() {
